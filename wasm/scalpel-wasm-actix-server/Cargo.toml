@@ -1,0 +1,26 @@
+[package]
+name = "scalpel-wasm-example"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+scalpel = { git = "https://github.com/ystero-dev/scalpel", features = ["wasm"] }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+actix-web = "4"
+actix-multipart = "0.6.1"
+actix-files = "0.6.5"
+futures-util = "0.3.30"
+uuid = "1.8.0"
+pcap-file = "2.0.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+hex = "0.4"
+
+[features]
+wasm = ["scalpel/wasm"]

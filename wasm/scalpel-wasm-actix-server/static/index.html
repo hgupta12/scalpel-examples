@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalpel WASM</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <h1 class="heading">Scalpel WASM Example</h1>
+    <div class="container">
+        <form target="/" method="post" enctype="multipart/form-data">
+          <input type="file" multiple name="file"/>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    <div class="list-container">
+        <ul id="list" class="list"></ul>
+    </div>
+    <div id="packet"></div>
+</body>
+</html>
